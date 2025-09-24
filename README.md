@@ -2,6 +2,12 @@ IMDB Dataset: Sentiment Analysis
 
 **IMPORTANT NOTE**: the final version of the code is model2.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00. The final metric table uses the original model's metrics.
 
+original lstm metrics:
+
+<img width="664" height="204" alt="image" src="https://github.com/user-attachments/assets/ae69ae9d-f9da-4c7c-a8e7-31613692d25d" /> can be checked in model1.ipynb
+
+
+
 This project trains sentiment analysis models on the **IMDB movie reviews dataset**.  
 The models predicts whether a review is **positive** or **negative**.  
 Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scikit-learn)
