@@ -1,8 +1,9 @@
 IMDB Dataset: Sentiment Analysis
+**IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 
 
-This project trains a sentiment analysis model on the **IMDB movie reviews dataset**.  
-The model predicts whether a review is **positive** or **negative**.  
-Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch)
+This project trains sentiment analysis models on the **IMDB movie reviews dataset**.  
+The models predicts whether a review is **positive** or **negative**.  
+Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scikit-learn)
 
 **Approach** 
 
@@ -48,7 +49,20 @@ Recall : Out of all the positive reviews, how many were correctly identified as 
 
 F1 Score : Mean of precision and recall.
 
+  Model                       Accuracy  Precision  Recall   F1
+  
+  Logistic Regression (Raw)    0.8899   0.883835  0.8978  0.890763
+  
+  Logistic Regression (Cleaned) 0.8907   0.883716  0.8998  0.891686
+
+Confusion Matrix: shows how many predictions were right, how many were wrong
+
 <img width="569" height="455" alt="image" src="https://github.com/user-attachments/assets/7fa97a22-8dba-4019-b3f2-711ebfab1b2f" />
+
+Learning Curve: graph that shows how the model’s performance changes with the size of the training data.
+
+<img width="576" height="455" alt="image" src="https://github.com/user-attachments/assets/2602a214-856f-48e7-bb4d-3dccf0d28ecc" />
+
 
 
 Model 2: Pytorch LSTM
@@ -140,5 +154,40 @@ Validation is performed to track loss and accuracy on unseen data.
 The best model (lowest validation loss) is saved automatically as best_model.pt.
 
 After training, metrics including Accuracy, Precision, Recall, F1-score, and a confusion matrix are computed to evaluate performance.
+
+Confusion Matrix:
+
+<img width="548" height="432" alt="image" src="https://github.com/user-attachments/assets/40231fe2-4002-4b18-a4a8-3aede869c200" />
+
+**IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for this model (87.9) which wasnt replicated in the new notebook.
+
+
+
+Model 3: Linear SVC
+
+Linear svc, based on the supervised machine learning algorithm used for classification tasks (SVM), is the next model we are using because it is efficient and effective for text classification, perfect for our imdb dataset. We train it and test it on our cleaned data and track the same metrics as before.
+
+Accuracy: 0.8802
+
+Precision: 0.8748028391167192
+
+Recall: 0.8874
+
+F1 Score: 0.881056393963463
+
+Confusion Matrix:
+
+<img width="569" height="455" alt="image" src="https://github.com/user-attachments/assets/1a06bf02-49bd-4181-8258-1176dc095c10" />
+
+Learning Curve:
+
+<img width="700" height="470" alt="image" src="https://github.com/user-attachments/assets/a42ca3b4-52c6-4e28-a0db-c375b4d4eb31" />
+
+All 3 Models Metrics Comparison:
+
+<img width="846" height="528" alt="image" src="https://github.com/user-attachments/assets/f10b98ef-363e-4966-955e-b8a36c29c735" />
+
+
+
 
 
