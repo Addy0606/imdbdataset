@@ -48,6 +48,9 @@ Recall : Out of all the positive reviews, how many were correctly identified as 
 
 F1 Score : Mean of precision and recall.
 
+<img width="569" height="455" alt="image" src="https://github.com/user-attachments/assets/7fa97a22-8dba-4019-b3f2-711ebfab1b2f" />
+
+
 Model 2: Pytorch LSTM
 
 Pipeline: Data cleaning, tokenisation (bert), custom dataset/dataloaders creation, model training + eval
