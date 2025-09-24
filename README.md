@@ -1,6 +1,7 @@
 IMDB Dataset: Sentiment Analysis
 
-**IMPORTANT NOTE**: the final version of the code is model2.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00. The final metric table uses the original model's metrics.
+**IMPORTANT NOTE**: the final version of the code is model2.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00. The final metric table uses the original model's metrics. Additionally, to keep the readme a little shorter, many of the explanations are in the code as comments.
+
 
 original lstm metrics:
 
@@ -13,6 +14,7 @@ The models predicts whether a review is **positive** or **negative**.
 Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scikit-learn)
 
 **Approach** 
+Will compare three models, a pytorch LSTM model, Logistic regression model from scikit learn, and linear svc from scikit learn, compare all metrics and plot learning curves and confusion matrixes.
 
 Aim: To compare the metrics of the two different models and plot the confusion matrix and training/test performance plots.
 
