@@ -9,7 +9,9 @@ Aim: To compare the metrics of the two different models and plot the confusion m
 *Logistic Regression*:
 This model works well with large datasets and provides solid results.
 We start with data preprocessing : plotting sentiment-wise and analysing the output.
+
 <img width="589" height="432" alt="image" src="https://github.com/user-attachments/assets/927747cb-4c0b-48cd-961a-645c208e74f4" />
+
 As we can see, the data is balanced. This makes things a lot simpler for us, it makes training more stable.
 The next part of preprocessing is to split the data into training and testing datasets. In my approach, I've used an 80-20 split, where 80 percent is training and 20 percent is testing. 
 We also use stratify to maintain the same proportion of each label in both the training and testing sets.
@@ -26,6 +28,12 @@ Precision : Out of all the reviews that were identified as positive, how many we
 Recall : Out of all the positive reviews, how many were correctly identified as positive?
 F1 Score : Mean of precision and recall.
 
+Model 2: Pytorch LSTM
+Pipeline: Data cleaning, tokenisation (bert), custom dataset/dataloaders creation, model training + eval
+Cleaning:
+We follow the same approach as we did for the logical regression model.
+Tokenisation (example in code):
+We need to split the text into words so we can process this numerically. In the scikit-learn model, this was done automatically for us.
 
 
 
