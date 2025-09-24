@@ -1,5 +1,6 @@
 IMDB Dataset: Sentiment Analysis
-**IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 
+
+**IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00, which is what has been compared with the other metrics.
 
 This project trains sentiment analysis models on the **IMDB movie reviews dataset**.  
 The models predicts whether a review is **positive** or **negative**.  
