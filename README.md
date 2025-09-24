@@ -191,6 +191,6 @@ All 3 Models Metrics Comparison:
 <img width="846" height="528" alt="image" src="https://github.com/user-attachments/assets/f10b98ef-363e-4966-955e-b8a36c29c735" />
 
 
-
+From the chart, all three models perform similarly across most metrics, with slight variations. Logistic Regression achieves high accuracy and F1-score, the LSTM shows strong precision but slightly lower recall, and LinearSVC performs consistently across metrics, highlighting that all models are effective for sentiment classification on this dataset.
 
 
