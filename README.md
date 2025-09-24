@@ -1,6 +1,6 @@
 IMDB Dataset: Sentiment Analysis
 
-**IMPORTANT NOTE**: the final version of the code is model2.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00, which is what has been compared with the other metrics.
+**IMPORTANT NOTE**: the final version of the code is model2.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00. The final metric table uses the original model's metrics.
 
 This project trains sentiment analysis models on the **IMDB movie reviews dataset**.  
 The models predicts whether a review is **positive** or **negative**.  
@@ -129,13 +129,16 @@ label: The sentiment label as a tensor
 for training, we need to feed our custom data set in batches, along with shuffling so the model does not learn the data order. also, as we will see in the training loop later, we can iterate over these batches efficiently. this is achieved using dataloader.
 
 *Initialisation of Model*
+
  We will use LSTM (Long Short Term Memory) which is a type of RNN , controls what to remember and what to forget, good for sentiment analysis (better than regular rnn).
  Architecture overview: Embedding layer, LSTM layer, attention masking, fully connnected layer and output (squeezed tensor of shape batch_size)
 
  *Instantiation of parameters*
+ 
  increased embedded layer dimensions and hidden layer dimensions from defaults to 200 and 256 respectively for increased accuracy.
 
  *Loss function and optimizer*
+ 
  Binary Cross-Entropy with Logits loss function is used because our data is binary classification (positive vs negative sentiment).
  
  Optimizer: Adam
@@ -148,7 +151,7 @@ The model trains for a maximum of 6 epochs, using early stopping if validation l
 
 During each epoch:
 
-The Lmodel processes batches of reviews, and weights are updated using Adam to minimize the loss.
+The model processes batches of reviews, and weights are updated using Adam to minimize the loss.
 
 Validation is performed to track loss and accuracy on unseen data.
 
@@ -161,7 +164,6 @@ Confusion Matrix:
 <img width="548" height="432" alt="image" src="https://github.com/user-attachments/assets/40231fe2-4002-4b18-a4a8-3aede869c200" />
 
 **IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for this model (87.9) which wasnt replicated in the new notebook.
-
 
 
 Model 3: Linear SVC
