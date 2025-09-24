@@ -16,7 +16,7 @@ Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scik
 
 Aim: To compare the metrics of the two different models and plot the confusion matrix and training/test performance plots.
 
-*Logistic Regression*:
+**Logistic Regression**:
 
 This model works well with large datasets and provides solid results.
 
@@ -31,20 +31,20 @@ The next part of preprocessing is to split the data into training and testing da
 
 We also use stratify to maintain the same proportion of each label in both the training and testing sets.
 
-*Vectorisation*
+**Vectorisation**
 
 Models can't understand regular English : they understand numbers. To convert our data to numbers, we use the TF - IDF vectorisor provided by scikit learn, 
 emitting common words like 'the', 'is', etc. and setting max features as 5000 to limit vocabulary size.
 
 We then fit_transform for the training set so the model learns the vocabulary and plain transform for the testing set so it doesn't.
 
-*Model Instantiation*
+**Model Instantiation**
 
 We are using the Logistic Regression model with 500 maximum iterations (to ensure weights are optimised).
 
 We then proceed to train the model on our vectorized training data and predict on our testing data.
 
-*Metrics*
+**Metrics**
 
 The following metrics have been considered:
 
@@ -72,7 +72,7 @@ Learning Curve: graph that shows how the model’s performance changes with the 
 
 
 
-Model 2: Pytorch LSTM
+**Model 2: Pytorch LSTM**
 
 Pipeline: Data cleaning, tokenisation (bert), custom dataset/dataloaders creation, model training + eval
 
@@ -130,20 +130,20 @@ attention_mask: Binary mask indicating which tokens are real vs padding.
 
 label: The sentiment label as a tensor
 
-*Initialisation of Dataloader*
+**Initialisation of Dataloader**
 
 for training, we need to feed our custom data set in batches, along with shuffling so the model does not learn the data order. also, as we will see in the training loop later, we can iterate over these batches efficiently. this is achieved using dataloader.
 
-*Initialisation of Model*
+**Initialisation of Model**
 
  We will use LSTM (Long Short Term Memory) which is a type of RNN , controls what to remember and what to forget, good for sentiment analysis (better than regular rnn).
  Architecture overview: Embedding layer, LSTM layer, attention masking, fully connnected layer and output (squeezed tensor of shape batch_size)
 
- *Instantiation of parameters*
+ **Instantiation of parameters**
  
  increased embedded layer dimensions and hidden layer dimensions from defaults to 200 and 256 respectively for increased accuracy.
 
- *Loss function and optimizer*
+ **Loss function and optimizer**
  
  Binary Cross-Entropy with Logits loss function is used because our data is binary classification (positive vs negative sentiment).
  
@@ -172,7 +172,7 @@ Confusion Matrix:
 **IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for this model (87.9) which wasnt replicated in the new notebook.
 
 
-Model 3: Linear SVC
+**Model 3: Linear SVC**
 
 Linear svc, based on the supervised machine learning algorithm used for classification tasks (SVM), is the next model we are using because it is efficient and effective for text classification, perfect for our imdb dataset. We train it and test it on our cleaned data and track the same metrics as before.
 
@@ -184,15 +184,15 @@ Recall: 0.8874
 
 F1 Score: 0.881056393963463
 
-Confusion Matrix:
+**Confusion Matrix:**
 
 <img width="569" height="455" alt="image" src="https://github.com/user-attachments/assets/1a06bf02-49bd-4181-8258-1176dc095c10" />
 
-Learning Curve:
+**Learning Curve:**
 
 <img width="700" height="470" alt="image" src="https://github.com/user-attachments/assets/a42ca3b4-52c6-4e28-a0db-c375b4d4eb31" />
 
-All 3 Models Metrics Comparison:
+**All 3 Models Metrics Comparison:**
 
 <img width="846" height="528" alt="image" src="https://github.com/user-attachments/assets/f10b98ef-363e-4966-955e-b8a36c29c735" />
 
