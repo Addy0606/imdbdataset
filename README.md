@@ -59,15 +59,83 @@ We follow the same approach as we did for the logical regression model.
 Tokenisation (example in code):
 
 We need to split the text into words so we can process this numerically. In the scikit-learn model, this was done automatically for us.
-In the output, we see three tensors, namely input ids, token type ids and attention mask.
 
-input ids are the token ids for each word in the sentence.
+Custom Dataset:
 
-token type ids are used to differentiate between different sentence pairs like question + answer. ( 0 for first sentence, 1 for second). since its single sentence, all are 0.
+Our custom dataset converts raw text into numerical tokens and organizes labels for efficient batching.
 
-attention mask tells us which tokens are actual words (1) and which are padding (0).
+reviews: List of movie reviews (text).
 
+labels: List of corresponding sentiment labels (0 for negative, 1 for positive).
 
+tokenizer: A tokenizer (bert-base-uncased) to convert text into token IDs.
 
+max_length: Maximum number of tokens per review. Longer reviews are truncated, shorter reviews are padded.
+
+Inside the constructor:
+
+Reviews and labels are converted to Python lists for easy indexing.
+
+Length (__len__):
+
+Returns the total number of reviews in the dataset.
+
+This allows PyTorch to know how many samples are available
+
+Get item (__getitem__):
+
+Accesses one review and its label by index idx.
+
+Converts the review to a string and the label to a PyTorch tensor.
+
+Tokenizes the review using the tokenizer:
+
+Adds padding to reach max_length.
+
+Truncates reviews that are too long.
+
+Returns PyTorch tensors.
+
+Removes extra dimensions using .squeeze() to ensure the shapes are compatible with the LSTM.
+
+Returns a dictionary with:
+
+input_ids: Numeric IDs of tokens in the review.
+
+attention_mask: Binary mask indicating which tokens are real vs padding.
+
+label: The sentiment label as a tensor
+
+*Initialisation of Dataloader*
+
+for training, we need to feed our custom data set in batches, along with shuffling so the model does not learn the data order. also, as we will see in the training loop later, we can iterate over these batches efficiently. this is achieved using dataloader.
+
+*Initialisation of Model*
+ We will use LSTM (Long Short Term Memory) which is a type of RNN , controls what to remember and what to forget, good for sentiment analysis (better than regular rnn).
+ Architecture overview: Embedding layer, LSTM layer, attention masking, fully connnected layer and output (squeezed tensor of shape batch_size)
+
+ *Instantiation of parameters*
+ increased embedded layer dimensions and hidden layer dimensions from defaults to 200 and 256 respectively for increased accuracy.
+
+ *Loss function and optimizer*
+ Binary Cross-Entropy with Logits loss function is used because our data is binary classification (positive vs negative sentiment).
+ 
+ Optimizer: Adam
+ 
+ Adam is a popular gradient-based optimizer that adapts learning rates for each parameter.
+
+ Training and Evaluation
+
+The model trains for a maximum of 6 epochs, using early stopping if validation loss doesn’t improve for 2 consecutive epochs.
+
+During each epoch:
+
+The Lmodel processes batches of reviews, and weights are updated using Adam to minimize the loss.
+
+Validation is performed to track loss and accuracy on unseen data.
+
+The best model (lowest validation loss) is saved automatically as best_model.pt.
+
+After training, metrics including Accuracy, Precision, Recall, F1-score, and a confusion matrix are computed to evaluate performance.
 
 
