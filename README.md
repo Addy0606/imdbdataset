@@ -11,7 +11,8 @@ original lstm metrics:
 
 This project trains sentiment analysis models on the **IMDB movie reviews dataset**.  
 The models predicts whether a review is **positive** or **negative**.  
-Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scikit-learn)
+Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scikit-learn) , Ensemble: LR and LSTM
+
 
 **Approach** 
 Will compare three models, a pytorch LSTM model, Logistic regression model from scikit learn, and linear svc from scikit learn, compare all metrics and plot learning curves and confusion matrixes.
