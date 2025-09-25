@@ -293,4 +293,12 @@ The Ensemble has the highest F1 (~0.893), which makes sense because F1 balances 
 
 This suggests that combining models is helping to leverage their strengths.
 
+**Challenges faced:**
+
+Too many/too little epochs, sigmoid function used too often, type mismatch in attention mask (part of bert tokeniser) , long training times on cpu (switched to cuda) , hyperparatemer tuning and introduction of dropout resulting in the model not learning at all.
+
+all of these issues were addressed in the final rendition.
+
+
+
 
