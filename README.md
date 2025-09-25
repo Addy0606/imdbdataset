@@ -201,7 +201,7 @@ F1 Score: 0.881056393963463
 
 From the chart, all three models perform similarly across most metrics, with slight variations. Logistic Regression achieves high accuracy and F1-score, the LSTM shows strong precision but slightly lower recall, and LinearSVC performs consistently across metrics, highlighting that all models are effective for sentiment classification on this dataset.
 
-Ensemble:
+**Ensemble:**
 
 To wrap things up, we combine the predictions of the pytorch LSTM and the scikit learn LR  to improve sentiment classification. We collect the probabilities using sigmoid function on the lstm outputs and for the scikit learn LR, we use scikit learn's predict-proba method. we then combine the probabilities from both models by averaging. 
 
