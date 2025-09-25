@@ -37,6 +37,8 @@ The next part of preprocessing is to split the data into training and testing da
 
 We also use stratify to maintain the same proportion of each label in both the training and testing sets.
 
+Additionally, in the code, I've included a comparison between raw and cleaned data. Data was cleaned using NLTK, removed noise, emojis, converted text to lowercase, removed html tags, special characters and common stopwords like the, is etc.
+
 **Vectorisation**
 
 Models can't understand regular English : they understand numbers. To convert our data to numbers, we use the TF - IDF vectorisor provided by scikit learn, 
@@ -59,6 +61,8 @@ Accuracy : Measures accuracy of prediction.
 Precision : Out of all the reviews that were identified as positive, how many were actually positive?
 
 Recall : Out of all the positive reviews, how many were correctly identified as positive?
+
+The probabilities are collected to use in the ensemble model.
 
 F1 Score : Mean of precision and recall.
 
