@@ -168,12 +168,25 @@ The best model (lowest validation loss) is saved automatically as best_model.pt.
 
 After training, metrics including Accuracy, Precision, Recall, F1-score, and a confusion matrix are computed to evaluate performance.
 
+Epoch 1: Train Loss=0.2442, Val Loss=0.3179, Val Acc=0.8777
+
+Epoch 2: Train Loss=0.1658, Val Loss=0.3346, Val Acc=0.8799
+
+Epoch 3: Train Loss=0.1078, Val Loss=0.3568, Val Acc=0.8804
+
+Early stopping triggered!
+
+Accuracy: 0.8804
+
+Precision: 0.8703271028037384
+
+Recall: 0.894
+
+F1 Score: 0.8820047355958959
+
 Confusion Matrix:
 
-<img width="548" height="432" alt="image" src="https://github.com/user-attachments/assets/40231fe2-4002-4b18-a4a8-3aede869c200" />
-
-**IMPORTANT NOTE**: the final version of the code is modelnew.ipynb, but the initial version, model.ipynb, has higher accuracy for this model (87.9) which wasnt replicated in the new notebook.
-
+<img width="548" height="432" alt="image" src="https://github.com/user-attachments/assets/fc22be90-311a-4673-a7a1-0498b07a4a4c" />
 
 **Model 3: Linear SVC**
 
@@ -197,7 +210,8 @@ F1 Score: 0.881056393963463
 
 **All 3 Models Metrics Comparison:**
 
-<img width="846" height="528" alt="image" src="https://github.com/user-attachments/assets/f10b98ef-363e-4966-955e-b8a36c29c735" />
+<img width="846" height="528" alt="image" src="https://github.com/user-attachments/assets/bae0484a-9308-4259-8852-20deaa03dc15" />
+
 
 
 From the chart, all three models perform similarly across most metrics, with slight variations. Logistic Regression achieves high accuracy and F1-score, the LSTM shows strong precision but slightly lower recall, and LinearSVC performs consistently across metrics, highlighting that all models are effective for sentiment classification on this dataset.
