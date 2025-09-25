@@ -1,6 +1,6 @@
 IMDB Dataset: Sentiment Analysis
 
-**IMPORTANT NOTE**: the final version of the code is model2.ipynb, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) which wasnt able to be replicated in the new notebook. Instead, the new version has a slightly reduced accuracy of 86.00. The final metric table uses the original model's metrics. Additionally, to keep the readme a little shorter, many of the explanations are in the code as comments.
+**IMPORTANT NOTE**: the final version of the code is model2.ipynb, which runs the training loop for the pytotch lstm twice for a total of (6+3) epochs for 88.04 accuracy, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) with one training run (6 epochs). The final bar graph comparison of all three models (LR, LSTM, LinearSVC) uses the metrics of the latest training run of the LSTM in model2.
 
 
 original lstm metrics:
@@ -200,5 +200,24 @@ F1 Score: 0.881056393963463
 
 
 From the chart, all three models perform similarly across most metrics, with slight variations. Logistic Regression achieves high accuracy and F1-score, the LSTM shows strong precision but slightly lower recall, and LinearSVC performs consistently across metrics, highlighting that all models are effective for sentiment classification on this dataset.
+
+Ensemble:
+
+To wrap things up, we combine the predictions of the pytorch LSTM and the scikit learn LR  to improve sentiment classification. We collect the probabilities using sigmoid function on the lstm outputs and for the scikit learn LR, we use scikit learn's predict-proba method. we then combine the probabilities from both models by averaging. 
+
+Ensemble Metrics (RNN + LR):
+
+Accuracy: 0.8906
+
+Precision: 0.8737083811710677
+
+Recall: 0.9132
+
+F1 Score: 0.8930177977703893
+
+Confusion Matrix:
+
+<img width="452" height="393" alt="image" src="https://github.com/user-attachments/assets/8f85541d-d697-4dc6-86dd-90c5a831da4a" />
+
 
 
