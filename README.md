@@ -273,5 +273,24 @@ Confusion Matrix:
 | Linear SVC                   | 0.8802  | 0.874803       | 0.8874  | 0.881056       |
 | Ensemble (RNN + LR)          | 0.8906  | 0.873708       | 0.9132  | 0.893018       |
 
+**Results:**
+
+The best accuracy comes from Logistic Regression (cleaned) and the Ensemble, both around 0.89.
+
+LSTM and Linear SVC are slightly lower (~0.88).
+
+Precision vs Recall
+
+LSTM: Lower precision (0.87) but higher recall (0.894) : it’s slightly more recall biased, meaning it catches more positives but may misclassify negatives.
+
+Linear SVC: Higher precision (0.875) and slightly lower recall (0.887) : slightly more precision-focused.
+
+Ensemble: Achieves a good balance with the highest recall (0.913) while maintaining reasonable precision (0.874) → ensemble helps reduce false negatives.
+
+F1 Score
+
+The Ensemble has the highest F1 (~0.893), which makes sense because F1 balances precision and recall.
+
+This suggests that combining models is helping to leverage their strengths.
 
 
