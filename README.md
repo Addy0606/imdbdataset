@@ -1,4 +1,4 @@
-IMDB Dataset: Sentiment Analysis
+**IMDB Dataset: Sentiment Analysis**
 
 **IMPORTANT NOTE**: the final version of the code is model2.ipynb, which runs the training loop for the pytotch lstm twice for a total of (6+3) epochs for 88.04 accuracy, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) with one training run (6 epochs). The final bar graph comparison of all three models (LR, LSTM, LinearSVC) uses the metrics of the latest training run of the LSTM in model2.
 
@@ -18,11 +18,15 @@ Models Used: Logistic Regression (Scikit-Learn), LSTM (Pytorch), LinearSVC (Scik
 **Approach** 
 Will compare three models, a pytorch LSTM model, Logistic regression model from scikit learn, and linear svc from scikit learn, compare all metrics and plot learning curves and confusion matrixes.
 
-Aim: To compare the metrics of the two different models and plot the confusion matrix and training/test performance plots.
+**Aim:** To compare the metrics of the two different models and plot the confusion matrix and training/test performance plots.
 
 **Logistic Regression**:
 
-Reason to use: Simplicity: Easy to implement and interpret. Speed: Very fast to train even for high-dimensional datasets.
+Type: Classical machine learning algorithm for binary classification.
+
+How it works: Models the probability of a class using the logistic (sigmoid) function.
+
+Reason its been used: Simplicity: Easy to implement and interpret. Speed: Very fast to train even for high-dimensional datasets.
 
 This model works well with large datasets and provides solid results.
 
@@ -83,6 +87,14 @@ Learning Curve: graph that shows how the model’s performance changes with the 
 
 
 **Model 2: Pytorch LSTM**
+
+Type: Recurrent Neural Network (RNN) variant designed for sequential data.
+
+How it works:
+
+Processes input sequences step by step.
+
+Uses memory cells and gates (input, forget, output) to decide what information to retain or discard.
 
 We use an LSTM because  it's good for text sequences and has flexible sequence handling, compared to regular RNNs.
 
@@ -202,6 +214,12 @@ Confusion Matrix:
 <img width="548" height="432" alt="image" src="https://github.com/user-attachments/assets/fc22be90-311a-4673-a7a1-0498b07a4a4c" />
 
 **Model 3: Linear SVC**
+
+Linear SVC (Support Vector Classifier)
+
+Type: Classical machine learning algorithm based on Support Vector Machines (SVM).
+
+How it works: Finds a hyperplane in feature space that best separates classes with maximum margin.
 
 Linear svc, based on the supervised machine learning algorithm used for classification tasks (SVM), is the next model we are using because it is efficient and effective for text classification, perfect for our imdb dataset. We train it and test it on our cleaned data and track the same metrics as before.
 
