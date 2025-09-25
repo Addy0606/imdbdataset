@@ -3,9 +3,10 @@ IMDB Dataset: Sentiment Analysis
 **IMPORTANT NOTE**: the final version of the code is model2.ipynb, which runs the training loop for the pytotch lstm twice for a total of (6+3) epochs for 88.04 accuracy, but the initial version, model.ipynb, has higher accuracy for the Pytorch LSTM model (87.9) with one training run (6 epochs). The final bar graph comparison of all three models (LR, LSTM, LinearSVC) uses the metrics of the latest training run of the LSTM in model2.
 
 
-original lstm metrics:
+**original lstm metrics:**
 
-<img width="664" height="204" alt="image" src="https://github.com/user-attachments/assets/ae69ae9d-f9da-4c7c-a8e7-31613692d25d" /> can be checked in model1.ipynb
+<img width="664" height="204" alt="image" src="https://github.com/user-attachments/assets/ae69ae9d-f9da-4c7c-a8e7-31613692d25d" /> 
+can be checked in model1.ipynb
 
 
 
@@ -20,6 +21,8 @@ Will compare three models, a pytorch LSTM model, Logistic regression model from 
 Aim: To compare the metrics of the two different models and plot the confusion matrix and training/test performance plots.
 
 **Logistic Regression**:
+
+Reason to use: Simplicity: Easy to implement and interpret. Speed: Very fast to train even for high-dimensional datasets.
 
 This model works well with large datasets and provides solid results.
 
@@ -77,6 +80,8 @@ Learning Curve: graph that shows how the model’s performance changes with the 
 
 **Model 2: Pytorch LSTM**
 
+We use an LSTM because  it's good for text sequences and has flexible sequence handling, compared to regular RNNs.
+
 Pipeline: Data cleaning, tokenisation (bert), custom dataset/dataloaders creation, model training + eval
 
 Cleaning:
@@ -85,7 +90,9 @@ We follow the same approach as we did for the logical regression model.
 
 Tokenisation (example in code):
 
-We need to split the text into words so we can process this numerically. In the scikit-learn model, this was done automatically for us.
+We need to split the text into words so we can process this numerically. In the scikit-learn model, this was done automatically for us. We use bert-uncased as it returns tensors, useful for our model to use.
+
+in the output, we see three tensors, namely input ids, token type ids and attention mask. input ids are the token ids for each word in the sentence. token type ids are used to differentiate between different sentence pairs like question + answer. ( 0 for first sentence, 1 for second). since its single sentence, all are  0. attention mask tells us which tokens are actual words (1) and which are padding (0).
 
 Custom Dataset:
 
@@ -141,6 +148,8 @@ for training, we need to feed our custom data set in batches, along with shuffli
 
  We will use LSTM (Long Short Term Memory) which is a type of RNN , controls what to remember and what to forget, good for sentiment analysis (better than regular rnn).
  Architecture overview: Embedding layer, LSTM layer, attention masking, fully connnected layer and output (squeezed tensor of shape batch_size)
+ 
+ Embedding layer converts integer word indices to vectors. LSTM layer learns patterns from the embedded input. Fully connected layer connects every input neuron to every output neuron.
 
  **Instantiation of parameters**
  
