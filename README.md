@@ -213,6 +213,11 @@ Confusion Matrix:
 
 <img width="548" height="432" alt="image" src="https://github.com/user-attachments/assets/fc22be90-311a-4673-a7a1-0498b07a4a4c" />
 
+Training v validation loss:
+
+<img width="1389" height="495" alt="image" src="https://github.com/user-attachments/assets/fdac8105-f7b5-4fec-b5b0-594305fde443" />
+
+
 **Model 3: Linear SVC**
 
 Linear SVC (Support Vector Classifier)
