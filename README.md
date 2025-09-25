@@ -266,4 +266,12 @@ Confusion Matrix:
 <img width="452" height="393" alt="image" src="https://github.com/user-attachments/assets/8f85541d-d697-4dc6-86dd-90c5a831da4a" />
 
 
+| Model                       | Accuracy | Precision       | Recall   | F1 Score       |
+|------------------------------|---------|----------------|---------|----------------|
+| Logistic Regression (Cleaned)| 0.8907  | 0.883716       | 0.8998  | 0.891686       |
+| LSTM                         | 0.8804  | 0.870327       | 0.894   | 0.882005       |
+| Linear SVC                   | 0.8802  | 0.874803       | 0.8874  | 0.881056       |
+| Ensemble (RNN + LR)          | 0.8906  | 0.873708       | 0.9132  | 0.893018       |
+
+
 
