@@ -215,7 +215,8 @@ Confusion Matrix:
 
 Training v validation loss:
 
-<img width="1389" height="495" alt="image" src="https://github.com/user-attachments/assets/fdac8105-f7b5-4fec-b5b0-594305fde443" />
+<img width="894" height="588" alt="image" src="https://github.com/user-attachments/assets/b2fe350e-de61-4f42-b2d0-918642179bff" />
+
 
 
 **Model 3: Linear SVC**
